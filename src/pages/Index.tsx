@@ -55,15 +55,19 @@ const Index = () => {
                   onLoad={() => setLoaded(true)}
                 />
                 
-                {/* Mobile-optimized glass overlay at the bottom - REDUCED BLUR */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8" style={{ 
+                {/* REDUCED AREA of glass overlay - now just for the button area */}
+                <div className="absolute bottom-0 left-0 right-0 py-3 px-4" style={{ 
                   backdropFilter: "blur(4px)", 
                   backgroundColor: "rgba(255, 255, 255, 0.05)", 
-                  borderTop: "1px solid rgba(255, 255, 255, 0.08)" 
+                  borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+                  maxWidth: "12rem",
+                  margin: "0 auto",
+                  borderRadius: "0.75rem 0.75rem 0 0",
+                  transform: "translateY(2px)"
                 }}>
                   <div className="flex flex-col items-center">
-                    <span className="font-montserrat text-xs sm:text-sm uppercase tracking-wider text-luxury-champagne/80 mb-1 sm:mb-2">Join Now</span>
-                    <button className="mt-2 px-5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 bg-luxury-gold text-black font-montserrat font-medium rounded-full text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-luxury-champagne hover:scale-105 active:scale-95">
+                    <span className="font-montserrat text-xs uppercase tracking-wider text-luxury-champagne/80 mb-1">Join Now</span>
+                    <button className="px-5 py-1.5 bg-luxury-gold text-black font-montserrat font-medium rounded-full text-xs transition-all duration-300 hover:bg-luxury-champagne hover:scale-105 active:scale-95">
                       Register Now
                     </button>
                   </div>
