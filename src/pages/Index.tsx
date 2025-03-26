@@ -22,8 +22,8 @@ const Index = () => {
       <div className={`max-w-4xl w-full transition-all duration-1000 ease-out ${loaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* Decorative background elements */}
         <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-luxury-gold/5 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-luxury-gold/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-luxury-gold/5 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-luxury-gold/5 rounded-full blur-xl" style={{ animationDelay: '2s' }}></div>
         </div>
         
         <div className="flex flex-col items-center">
@@ -55,8 +55,12 @@ const Index = () => {
                   onLoad={() => setLoaded(true)}
                 />
                 
-                {/* Mobile-optimized glass overlay at the bottom */}
-                <div className="absolute bottom-0 left-0 right-0 glass-effect p-4 sm:p-6 md:p-8">
+                {/* Mobile-optimized glass overlay at the bottom - REDUCED BLUR */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8" style={{ 
+                  backdropFilter: "blur(4px)", 
+                  backgroundColor: "rgba(255, 255, 255, 0.05)", 
+                  borderTop: "1px solid rgba(255, 255, 255, 0.08)" 
+                }}>
                   <div className="flex flex-col items-center">
                     <span className="font-montserrat text-xs sm:text-sm uppercase tracking-wider text-luxury-champagne/80 mb-1 sm:mb-2">Join Now</span>
                     <button className="mt-2 px-5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 bg-luxury-gold text-black font-montserrat font-medium rounded-full text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-luxury-champagne hover:scale-105 active:scale-95">
